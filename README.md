@@ -2,13 +2,20 @@
 
 ## Sobre
 
-<p align="center">Projeto de ordenação de livros</p>
+<p align="center">O projeto **Ordenação Livros** é uma aplicação criada para o teste da FGV com o intuito de avaliar a proficiência em Angular.</p>
 
 ## Tecnologias utilizadas
 
-O projeto foi desenvolvido utilizando as seguintes tecnologias
+O projeto foi desenvolvido utilizando  as seguinte tecnologia
 
 - [Angular](https://angular.io/)
+
+## Pacotes adicionais instalados
+
+Para o desenvolvimento foi instalado os seguintes pacotes
+
+- [Bootstrap5](https://www.npmjs.com/package/bootstrap)
+- [fontawesome](https://www.npmjs.com/package/@fortawesome/fontawesome-free)
 
 ## Como baixar o projeto
 
@@ -27,3 +34,15 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
   $ ng serve
 
 ```
+
+## Como utilizar
+
+- utilizar as setas localizadas no cabeçalho para realizar a ordenação dos ítens
+
+## Status do projeto
+
+Desenvolvido
+
+
+
+desenvolvido por Renato Ota
