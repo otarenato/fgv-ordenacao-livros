@@ -1,1 +1,42 @@
-<p>table works!</p>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>
+        Livro
+        <button class="btn btn-sm float-end" (click)="ordenarTitulo('desc')" title="Ordenação descendente">
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <button class="btn btn-sm float-end" (click)="ordenarTitulo('asc')" title="Ordenação ascendente">
+          <i class="fas fa-chevron-up"></i>
+        </button>
+      </th>
+      <th>
+        Autor
+        <button class="btn btn-sm float-end" (click)="ordenarAutor('desc')" title="Ordenação descendente">
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <button class="btn btn-sm float-end" (click)="ordenarAutor('asc')" title="Ordenação ascendente">
+          <i class="fas fa-chevron-up"></i>
+        </button>
+      </th>
+      <th>
+        Edição
+        <button class="btn btn-sm float-end" (click)="ordenarEdicao('desc')" title="Ordenação descendente">
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <button class="btn btn-sm float-end" (click)="ordenarEdicao('asc')" title="Ordenação ascendente">
+          <i class="fas fa-chevron-up"></i>
+        </button>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let livro of data">
+      <td>Livro {{ livro.id }}</td>
+      <td>{{ livro.titulo }}</td>
+      <td>{{ livro.autor }}</td>
+      <td>{{ livro.edicao }}</td>
+    </tr>
+  </tbody>
+</table>
