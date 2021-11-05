@@ -11,8 +11,6 @@ export class LivrosService {
 
   constructor(private http: HttpClient, private hostService: HostService) { }
 
-
-
   listarLivros(): Observable<Livro[]> {
     const URL = this.hostService.getDomainUrl();
     return this.http.get<Livro[]>(`${ URL }assets/data/livros.json`);
