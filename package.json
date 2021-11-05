@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --base-href https://otarenato.github.io/",
+    "build": "ng build --base-href /fgv-ordenacao-livros/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
