@@ -1,18 +1,37 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChange, SimpleChanges } from '@angular/core';
 import { Livro } from '../../models';
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss']
+  styleUrls: ['./table.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TableComponent implements OnInit {
+export class TableComponent implements OnInit, OnChanges {
 
   constructor() { }
 
   @Input() data: Livro[] = new Array<Livro>();
+  @Input() isEmpty: boolean = false;
 
   ngOnInit(): void {
+  }
+
+  /**
+   * Método para interceptar mudanças no conteúdo da tabela
+   * @param change
+   */
+  ngOnChanges(change: SimpleChanges) {
+    if (this.isEmpty) {
+      this.showMessage();
+    }
+  }
+
+  /**
+   * Método para disparar uma mensagem de alerta, caso a tabela não tenha dados para exibição
+   */
+  showMessage() {
+    alert('Não há dados para serem exibidos');
   }
 
   /**

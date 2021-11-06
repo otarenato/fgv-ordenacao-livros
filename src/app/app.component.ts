@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   constructor(private livrosService: LivrosService) {}
 
   listLivros: Livro[] = new Array<Livro>();
+  listaVazia: boolean = false;
 
   ngOnInit() {
     this.listarLivros();
@@ -25,9 +26,13 @@ export class AppComponent implements OnInit {
     this.livrosService.listarLivros().subscribe(res => {
       if (res.length > 0) {
         this.listLivros = res;
+        this.listaVazia = false;
       } else {
-
+        this.listaVazia = true;
       }
+    },
+    error => {
+      console.error('log de erro: ', error)
     });
   }
 }
