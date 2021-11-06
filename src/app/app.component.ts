@@ -8,17 +8,26 @@ import { Livro } from './shared/models';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'OrdenacaoLivros';
 
   constructor(private livrosService: LivrosService) {}
 
   listLivros: Livro[] = new Array<Livro>();
 
   ngOnInit() {
+    this.listarLivros();
+  }
+
+  /**
+   * Método para trazer a lista de livros e guardar em uma variável
+   * que será passada para o componente de tabela.
+   */
+  listarLivros(): void {
     this.livrosService.listarLivros().subscribe(res => {
-      if (res) {
+      if (res.length > 0) {
         this.listLivros = res;
+      } else {
+
       }
-    })
+    });
   }
 }

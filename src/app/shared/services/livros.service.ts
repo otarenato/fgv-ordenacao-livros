@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Livro } from '../models';
 import { HostService } from './host.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class LivrosService {
    *
    */
   listarLivros(): Observable<Livro[]> {
-    const URL = this.hostService.getDomainUrl();
+    const URL = environment.urlRoot;
     return this.http.get<Livro[]>(`${ URL }assets/data/livros.json`);
   }
 }
